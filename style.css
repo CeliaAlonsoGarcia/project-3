@@ -1,0 +1,79 @@
+
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(135, 193, 220);
+    font-family: sans-serif;
+    border: solid;
+    border-color: white;
+    border-width: 10px;
+}
+
+.movies {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-content: flex-start;
+ 
+}
+
+button {
+    border: solid;
+    border-width: 3px;
+    color: black;
+    background-color: rgba(97, 144, 162, 0.247);
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;  
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    display: block;
+
+}
+
+
+.film {
+    padding: 20px;
+    border-radius: 20px;  
+    margin: 10px;
+    height: auto;
+}
+   
+  
+
+/* height set to auto so that the box opens and closes */
+
+  
+ 
+
+/* 
+p {
+    width: 100%;
+    max-width: 400px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 15px;
+    padding: 0 auto;
+    display: block;
+    margin: 1cm auto;
+    } */
+
+
+.film img {
+    width: 300px;
+    height: auto;
+    max-width: 400px;
+    object-fit: cover;
+    padding: 20px;
+    justify-content: center; 
+    display: block;
+    margin: auto;
+
+}
+
+
