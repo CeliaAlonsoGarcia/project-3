@@ -6,6 +6,7 @@ let movieData = {
       runtime: 151,
       rating: 7.2,
       year: 2007,
+      tag: "darjeeling"
     },
     "The Royal Tenenbaums": {
       plot: "The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons",
@@ -35,4 +36,26 @@ let movieData = {
     },
   };
 
+  const movieDataArray = Object.entries(movieData);
+  const movies = document.querySelector(".movies");
+
+  movieDataArray.forEach(movie => { 
+   
+    movies.insertAdjacentHTML("beforeend", 
+    `
+    <div> 
+    <h1>${movie[0]}</h1>
+    <h2>${movie[1].plot}</h2>
+    </div>
+    `)
+  })
+
+
+  // foreach //queryslector/  insertadjacementHTML
+
+  console.log(movieDataArray)
+
+
+
+ 
   
