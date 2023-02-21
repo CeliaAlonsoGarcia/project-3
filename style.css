@@ -4,7 +4,7 @@ header {
     text-align: center;
     padding: 20px;
     background-color: rgb(135, 193, 220);
-    font-family: sans-serif;
+    font-family: Montserrat bold;
     border: solid;
     border-color: white;
     border-width: 10px;
@@ -19,7 +19,7 @@ header {
     align-content: flex-start;
  
 }
-
+/* 
 button {
     border: solid;
     border-width: 3px;
@@ -34,7 +34,7 @@ button {
     margin: auto;
     display: block;
 
-}
+} */
 
 
 .film {
