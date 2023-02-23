@@ -37,24 +37,48 @@ let movieData = {
   };
 
   const movieDataArray = Object.entries(movieData);
-  const movies = document.querySelector(".movies");
 
-  movieDataArray.forEach(movie => { 
+  // const title = movieData[0];
+  // const rating = movieData["rating"];
+  // const runtime = movieData ["runtime"];
+  // const plot = movieData["plot"];
+  // const year = movieData["year"];
+  // const cast = moiveData["cast"];
+
+  // console.log(key, value);
+
+  const movies = document.querySelector(".movies");
+  para.innerText = "This is a paragraph";
+  const movieTitle = "ET";
+  movies.innerHTML = "ET";
+  const rating = document.createElement("p");
+  rating.innerText = "This is a paragraph";
+
+  console.log(movies)
+
+  // showProperties(movie);
+  // function showProperties(obj) {
+  // for (let key in obj)}
+
+  // for (const [key, value] of Object.entries(movieData))
+
+  console.log(key);
+
+  // movieDataArray.forEach(movie => { 
    
-    movies.insertAdjacentHTML("beforeend", 
-    `
-    <div> 
-    <h1>${movie[0]}</h1>
-    <h2>${movie[1].plot}</h2>
-    </div>
-    `)
-  })
+  //   movies.insertAdjacentHTML("beforeend", 
+  //   `
+  //   <div> 
+  //   <h1>${movie[0]}</h1>
+  //   <h2>${movie[1].plot}</h2>
+  //   </div>
+  //   `)
+  // })
 
 
   // foreach //queryslector/  insertadjacementHTML
 
-  console.log(movieDataArray)
-
+//  conditional statements
 
 
  
