@@ -42,16 +42,16 @@ let movieData = {
 const moviesContainer = document.querySelector("#movies-container");
 
 // Iterate over each movie in the movieData object
-for (const movieTitle in movieData) {
+for (const title in movieData) {
   // Get a reference to the movie object
-  const movie = movieData[movieTitle];
+  const movie = movieData[title];
 
-  // Create a new HTML element for the movie
+  // Create a new HTML element for each movie
   const movieElement = document.createElement('div');
 
   // Add the movie title, year, plot, cast, runtime, and rating to the element
   movieElement.innerHTML = `
-    <h2>${movieTitle}</h2>
+    <h2>${title}</h2>
     <p><strong>Year:</strong> ${movie.year}</p>
     <p><strong>Plot:</strong> ${movie.plot}</p>
     <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
@@ -63,11 +63,36 @@ for (const movieTitle in movieData) {
   moviesContainer.appendChild(movieElement);
 }
 
+// Select buttons container for sorting by year
+const sortByYear = document.querySelector("#sort-by-year");
+const sortByRuntime = document.querySelector("#sort-by-runtime");
+const sortByRating = document.querySelector("#sort-by-rating");
+
+
+function sortByYear() {
+  const sortedMovieTitles = Object.keys(movieData).sort((a, b) => {
+    return movieData[a].year - movieData[b].year;
+  });
+
+
+
+
 
 
 // 1 way
     // let locationHTML = document.querySelector("#movies-container");
     // locationHTML.innerHTML = movieData["The Grand Budapest Hotel"].plot;
+
+    
+
+    // button.addEventListener("click", function() {
+    
+    // });
+    // });
+
+
+
+
 
 
   // const movieDataArray = Object.entries(movieData);
