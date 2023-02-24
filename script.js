@@ -36,35 +36,43 @@ let movieData = {
     },
   };
 
-  const movieDataArray = Object.entries(movieData);
 
-  // const title = movieData[0];
-  // const rating = movieData["rating"];
-  // const runtime = movieData ["runtime"];
-  // const plot = movieData["plot"];
-  // const year = movieData["year"];
-  // const cast = moiveData["cast"];
+    // Select the movies container element
 
-  // console.log(key, value);
+const moviesContainer = document.querySelector("#movies-container");
 
-  const movies = document.querySelector(".movies");
-  para.innerText = "This is a paragraph";
-  const movieTitle = "ET";
-  movies.innerHTML = "ET";
-  const rating = document.createElement("p");
-  rating.innerText = "This is a paragraph";
+// Iterate over each movie in the movieData object
+for (const movieTitle in movieData) {
+  // Get a reference to the movie object
+  const movie = movieData[movieTitle];
 
-  console.log(movies)
+  // Create a new HTML element for the movie
+  const movieElement = document.createElement('div');
 
-  // showProperties(movie);
-  // function showProperties(obj) {
-  // for (let key in obj)}
+  // Add the movie title, year, plot, cast, runtime, and rating to the element
+  movieElement.innerHTML = `
+    <h2>${movieTitle}</h2>
+    <p><strong>Year:</strong> ${movie.year}</p>
+    <p><strong>Plot:</strong> ${movie.plot}</p>
+    <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
+    <p><strong>Runtime:</strong> ${movie.runtime} minutes</p>
+    <p><strong>Rating:</strong> ${movie.rating}</p>
+  `;
 
-  // for (const [key, value] of Object.entries(movieData))
+  // Add the movie element to the movies container
+  moviesContainer.appendChild(movieElement);
+}
 
-  console.log(key);
 
-  // movieDataArray.forEach(movie => { 
+
+// 1 way
+    // let locationHTML = document.querySelector("#movies-container");
+    // locationHTML.innerHTML = movieData["The Grand Budapest Hotel"].plot;
+
+
+  // const movieDataArray = Object.entries(movieData);
+
+   // movieDataArray.forEach(movie => { 
    
   //   movies.insertAdjacentHTML("beforeend", 
   //   `
@@ -74,6 +82,19 @@ let movieData = {
   //   </div>
   //   `)
   // })
+
+  
+
+
+  // showProperties(movie);
+  // function showProperties(obj) {
+  // for (let key in obj)}
+
+  // for (const [key, value] of Object.entries(movieData))
+
+  // console.log(key);
+
+ 
 
 
   // foreach //queryslector/  insertadjacementHTML
