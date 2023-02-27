@@ -69,14 +69,34 @@ const sortByRuntime = document.querySelector("#sort-by-runtime");
 const sortByRating = document.querySelector("#sort-by-rating");
 
 
-function sortByYear() {
-  const sortedMovieTitles = Object.keys(movieData).sort((a, b) => {
-    return movieData[a].year - movieData[b].year;
-  });
+
+  // function sortMoviesByYear() {
+  //   const sortedMovieTitles = Object.keys(movieData).sort((a, b) => {
+  //     return movieData[a].year - movieData[b].year;
+  //   });
 
 
+  // chat gpt - says I'm missing last stepts
+   // Remove existing movie elements from the movies container
+//    moviesContainer.innerHTML = '';
 
+//    // Add new movie elements in the sorted order
+//    sortedMovieTitles.forEach(title => {
+//      const movie = movieData[title];
+//      const movieElement = document.createElement('div');
+//      movieElement.innerHTML = `
+//        <h2>${title}</h2>
+//        <p><strong>Year:</strong> ${movie.year}</p>
+//        <p><strong>Plot:</strong> ${movie.plot}</p>
+//        <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
+//        <p><strong>Runtime:</strong> ${movie.runtime} minutes</p>
+//        <p><strong>Rating:</strong> ${movie.rating}</p>
+//      `;
+//      moviesContainer.appendChild(movieElement);
+//    });
+//  }
 
+  //   sortByYear.addEventListener("click", sortMoviesByYear);
 
 
 // 1 way
