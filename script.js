@@ -1,5 +1,5 @@
 // Movie Data
-let movieData = {
+let movieDataObject = {
     "The Darjeeling Limited": {
       plot: "A year after their father's funeral, three brothers travel across India by train in an attempt to bond with each other.",
       cast: ["Jason Schwartzman", "Owen Wilson", "Adrien Brody"],
@@ -36,22 +36,101 @@ let movieData = {
     },
   };
 
+// new array for sorting the movie Data
+let movieData = [];
+let sortByAsc = false;
 
-    // Select the movies container element
+// iterate entries of the movieDataObject
+for(const [key, value] of Object.entries(movieDataObject)){
+
+
+  // join together the key (title of film) and value (film info) to create one new object
+  const newObject = {
+    title: key,
+     ...value
+    };
+    // Add newObject to movieData
+  movieData.push(newObject);
+}
+
+
+// Select the movies container element
 
 const moviesContainer = document.querySelector("#movies-container");
 
-// Iterate over each movie in the movieData object
-for (const title in movieData) {
-  // Get a reference to the movie object
-  const movie = movieData[title];
 
-  // Create a new HTML element for each movie
-  const movieElement = document.createElement('div');
+
+// Select buttons container for sorting by year
+const sortByYearBtn = document.querySelector("#sort-by-year");
+const sortByRuntimeBtn = document.querySelector("#sort-by-runtime");
+const sortByRatingBtn = document.querySelector("#sort-by-rating");
+const sortByAscCheckbox = document.querySelector("#sort-by-asc");
+
+const deleteFirstMovieButton = document.querySelector("#delete-first-movie");
+
+sortByAscCheckbox.addEventListener('change', () => {
+  sortByAsc = sortByAscCheckbox.checked
+});
+
+sortByYearBtn.addEventListener('click', () => {
+  movieData = movieData.sort((a,b) => 
+  // Inline condition
+    sortByAsc ?  
+      a.year - b.year : 
+      b.year - a.year);
+  drawMovieList();
+});
+
+sortByRatingBtn.addEventListener('click', ()=> {
+    movieData = movieData.sort((a,b) =>
+    sortByAsc ?
+      a.rating - b.rating :
+      b.rating - a.rating);
+      drawMovieList();
+  });
+
+sortByRuntimeBtn.addEventListener('click', ()=> {
+  movieData = movieData.sort((a,b) =>
+  sortByAsc ?
+    a.runtime - b.runtime :
+    b.runtime - a.runtime);
+  drawMovieList();
+});
+
+  // Example of above inline condition but not inline
+  // if(sortByAsc){
+  //   return a.year - b.year;
+  // }
+  // else{
+  //   return b.year - a.year;
+  // }
+
+deleteFirstMovieButton.addEventListener('click', () => {
+  if(movieData.length < 1)
+    return;
+
+  const removedElements = movieData.splice(0, 1);
+  console.log(movieData, removedElements);
+  drawMovieList();
+});
+
+function clearMovieList(){
+  // Clear the moviesContainers children
+  moviesContainer.innerHTML = '';
+}
+// Create new re-usable function that will CLEAR the movieContainer, and REDRAW the current movieData into the container
+function drawMovieList(){
+  clearMovieList();
+
+
+  for (const movie of movieData) {  
+    // Create a new HTML element for each movie
+    const movieElement = document.createElement('div');
+    
 
   // Add the movie title, year, plot, cast, runtime, and rating to the element
   movieElement.innerHTML = `
-    <h2>${title}</h2>
+    <h2>${movie.title}</h2>
     <p><strong>Year:</strong> ${movie.year}</p>
     <p><strong>Plot:</strong> ${movie.plot}</p>
     <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
@@ -59,14 +138,14 @@ for (const title in movieData) {
     <p><strong>Rating:</strong> ${movie.rating}</p>
   `;
 
-  // Add the movie element to the movies container
-  moviesContainer.appendChild(movieElement);
+    // Add the movie element to the movies container
+    moviesContainer.appendChild(movieElement);
+  }
+  
 }
 
-// Select buttons container for sorting by year
-const sortByYear = document.querySelector("#sort-by-year");
-const sortByRuntime = document.querySelector("#sort-by-runtime");
-const sortByRating = document.querySelector("#sort-by-rating");
+drawMovieList();
+
 
 
 
@@ -148,4 +227,7 @@ const sortByRating = document.querySelector("#sort-by-rating");
 
 
  
-  
+  // Iterate over each movie in the movieData object
+// for (const title in movieData) {
+//   // Get a reference to the movie object
+//   const movie = movieData[title];

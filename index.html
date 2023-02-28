@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <title>A Movie Data Project</title>
    
-   
+  
 
       <link rel="stylesheet" href="style.css">
     </head>
@@ -17,14 +17,21 @@
       <header>
         <h1>GREAT FILMS</h1>
       </header>
-   
+      <label for="sort-by-asc">Sort by ascending </label>|
+      <input id="sort-by-asc" type="checkbox" > 
+      
+
       <button id="sort-by-year"> Sort by Year </button>
       <button id="sort-by-rating">Sorty By Rating</button>
       <button id="sort-by-runtime">Sort by Runtime</button>
+      <button id="delete-first-movie">Delete first movie</button>
 
      <div id="movies-container"> </div>
     
-    
+     <form id="entry-form">
+      <input type="text" id="in-title">
+      <input type="number" id="in-year">
+     </form>
 
         <script src="script.js"> </script>
    
