@@ -146,6 +146,11 @@ function drawMovieList(){
 
 drawMovieList();
 
+const data = new FormData();
+movieData.forEach(item => {
+  data.append(`movieData[]`, JSON.stringify(item));
+});
+
 
 
 
