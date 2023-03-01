@@ -10,6 +10,19 @@ header {
     border-width: 10px;
 }
 
+.newmovie {
+
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(135, 193, 220);
+    font-family: Montserrat bold;
+    border: solid;
+    border-color: white;
+    border-width: 10px;
+}
+
+
+
 .movies {
 
     display: flex;

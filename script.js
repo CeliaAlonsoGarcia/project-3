@@ -60,11 +60,12 @@ const moviesContainer = document.querySelector("#movies-container");
 
 
 
-// Select buttons container for sorting by year
+// Select buttons container for sorting 
 const sortByYearBtn = document.querySelector("#sort-by-year");
 const sortByRuntimeBtn = document.querySelector("#sort-by-runtime");
 const sortByRatingBtn = document.querySelector("#sort-by-rating");
 const sortByAscCheckbox = document.querySelector("#sort-by-asc");
+
 
 const deleteFirstMovieButton = document.querySelector("#delete-first-movie");
 
@@ -146,10 +147,84 @@ function drawMovieList(){
 
 drawMovieList();
 
-const data = new FormData();
-movieData.forEach(item => {
-  data.append(`movieData[]`, JSON.stringify(item));
+//  Form for user to add new movie
+
+  // Select the form
+
+const form = document.getElementById("entry-form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // handle submit
 });
+
+let titleInput = document.getElementById("in-title");
+let yearInput = document.getElementById("in-year");
+let plotInput = document.getElementById("in-plot");
+let ratingInput = document.getElementById("in-rating");
+let runtimeInput = document.getElementById("in-runtime");
+// cast
+
+if (titleInput.value == "" || yearInput.value == "" || plotInput.value == "" || ratingInput.value == "" || runtimeInput.value == "") {
+  alert("Ensure you input a value in all fields!");
+} else {
+  // perform operation with form input
+  alert("Your new film has been successfully submitted!");
+  console.log(
+    `This form has a tile of ${titleInput.value} and a rating of ${ratingInput.value}`
+  );
+
+  const newTitle = titleInput.value; 
+  const newPlot = plotInput.value;
+  const newYear = yearInput.value;
+  const newRating = ratingInput.value;
+  const newRuntime = runtimeInput.value;
+  
+  const movieNewElement = document.createElement('div');
+  movieNewElement.innerHTML = 
+  `
+    <h2>${newTitle}</h2>
+    <p><strong>Year:</strong> ${newYear}</p>
+    <p><strong>Plot:</strong> ${newPlot}</p>
+    // <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
+    <p><strong>Runtime:</strong> ${newRuntime} minutes</p>
+    <p><strong>Rating:</strong> ${newRating}</p>
+  `;
+
+  titleInput.value = "";
+  plotInput.value = "";
+  runtimeInput.value = "";
+  ratingInput.value = "";
+  yearInput.value = "";
+}
+
+movieList.appendChild(movieNewElement);
+
+  // 	function addNewMovie() {
+  //     document.getElementById("form").innerHTML = ;
+  //   }
+  // });
+  
+
+// form.addEventListener('submit', function () {
+// 	function addNewMovie() {
+//     document.getElementById("form").innerHTML = ;
+//   }
+// });
+
+
+// const title = form.elements['title'];
+// const plot = form.elements['plot'];
+// const runtime = form.elements['runtime'];
+// const rating = form.elements['rating'];
+
+// let newTitle = title.value;
+// let newPlot = plot.value;
+// let newRuntime = runtime.value;
+// let newRating = rating.value;
+
+
 
 
 
