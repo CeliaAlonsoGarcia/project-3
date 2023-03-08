@@ -148,9 +148,9 @@ drawMovieList();
 const form = document.getElementById("entry-form");
 
 function addMovieArray(obj) {
-  movieDataObject.push(obj)
+  movieData.push(obj);
 
-  return movieDataObject;
+  return movieData;
 }
 
 form.addEventListener("submit", (e) => {
@@ -182,10 +182,11 @@ const newMovieData = {
   cast: newCast,
 };
 
-newMovieData = [];
-movieData.push(newMovieData);
 
-drawMovieList();
+addMovieArray(newMovieData);
+  drawMovieList();
+  form.reset();
+
 
 })
 
