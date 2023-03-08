@@ -147,15 +147,18 @@ drawMovieList();
 
 const form = document.getElementById("entry-form");
 
+// function to update movieData Array - it needs to be outside the submit function not to have problems with scope
 function addMovieArray(obj) {
   movieData.push(obj);
-
   return movieData;
 }
 
+// connecting submit button with the information we are submitting
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   
+// select the data we get in the form
+
 console.log('hi')
 let titleInput = document.getElementById("in-title");
 let yearInput = document.getElementById("in-year");
@@ -164,6 +167,7 @@ let ratingInput = document.getElementById("in-rating");
 let castInput = document.getElementById("in-cast");
 let runtimeInput = document.getElementById("in-runtime");
 
+// extract the values 
 const newTitle = titleInput.value; 
 const newPlot = plotInput.value;
 const newYear = yearInput.value;
@@ -173,6 +177,7 @@ const newCast = castInput.value.split(",");
 
 console.log(titleInput)
 
+// create new object with new input
 const newMovieData = {
   title: newTitle,
   plot: newPlot,
@@ -182,7 +187,7 @@ const newMovieData = {
   cast: newCast,
 };
 
-
+// new object being added to movieData
 addMovieArray(newMovieData);
   drawMovieList();
   form.reset();
