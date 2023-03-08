@@ -147,61 +147,121 @@ drawMovieList();
 
 const form = document.getElementById("entry-form");
 
+function addMovieArray(obj) {
+  movieDataObject.push(obj)
+
+  return movieDataObject;
+}
+
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+console.log('hi')
 let titleInput = document.getElementById("in-title");
 let yearInput = document.getElementById("in-year");
 let plotInput = document.getElementById("in-plot");
 let ratingInput = document.getElementById("in-rating");
+let castInput = document.getElementById("in-cast");
 let runtimeInput = document.getElementById("in-runtime");
-// cast
 
-if (titleInput.value == "" || yearInput.value == "" || plotInput.value == "" || ratingInput.value == "" || runtimeInput.value == "") {
-  alert("Ensure you input a value in all fields!");
-} else {
-  // perform operation with form input
-  alert("Your new film has been successfully submitted!");
-  console.log(
-    `This form has a tile of ${titleInput.value} and a rating of ${ratingInput.value}`
-  );
+const newTitle = titleInput.value; 
+const newPlot = plotInput.value;
+const newYear = yearInput.value;
+const newRating = ratingInput.value;
+const newRuntime = runtimeInput.value;
+const newCast = castInput.value.split(",");
 
-  const newTitle = titleInput.value; 
-  const newPlot = plotInput.value;
-  const newYear = yearInput.value;
-  const newRating = ratingInput.value;
-  const newRuntime = runtimeInput.value;
+console.log(titleInput)
 
-function drawNewMovieList(){
-  clearNewMovieList();
-    for (const movie of form) {  
-      // Create a new HTML element for each movie
-      const movieNewElement = document.createElement('div');
-  movieNewElement.innerHTML = 
-  `
-    <h2>${newTitle}</h2>
-    <p><strong>Year:</strong> ${newYear}</p>
-    <p><strong>Plot:</strong> ${newPlot}</p>
-    // <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
-    <p><strong>Runtime:</strong> ${newRuntime} minutes</p>
-    <p><strong>Rating:</strong> ${newRating}</p>
-  `;
+const newMovieData = {
+  title: newTitle,
+  plot: newPlot,
+  year: newYear,
+  rating: newRating,
+  runtime: newRuntime,
+  cast: newCast,
+};
 
-  moviesContainer.appendChild(movieNewElement);
-    }
-  }
-  drawNewMovieList();
+newMovieData = [];
+movieData.push(newMovieData);
+
+drawMovieList();
+
+})
+
+
+
   
-  titleInput.value = "";
-  plotInput.value = "";
-  runtimeInput.value = "";
-  ratingInput.value = "";
-  yearInput.value = "";
+console.log(movieData)
 
-  movieData.push(movieNewElement);
-}
+// movieNewElement.innerHTML = 
+//     `
+//       <h2>${newTitle}</h2>
+//       <p><strong>Year:</strong> ${newYear}</p>
+//       <p><strong>Plot:</strong> ${newPlot}</p>
+//       <p><strong>Runtime:</strong> ${newRuntime} minutes</p>
+//       <p><strong>Rating:</strong> ${newRating}</p>
+//     `
+// });
+
+
+  
+// )
+
+
+
+
+// // cast
+
+// console.log("submited");
+
+// if (titleInput.value == "" || yearInput.value == "" || plotInput.value == "" || ratingInput.value == "" || runtimeInput.value == "") {
+//   alert("Ensure you input a value in all fields!");
+// } else {
+//   // perform operation with form input
+//   // alert("Your new film has been successfully submitted!");
+  
+//   //   `This form has a tile of ${titleInput.value} and a rating of ${ratingInput.value}`
+//   // );
+
+//   const newTitle = titleInput.value; 
+//   const newPlot = plotInput.value;
+//   const newYear = yearInput.value;
+//   const newRating = ratingInput.value;
+//   const newRuntime = runtimeInput.value;
+
+// function drawNewMovieList(){
+//   clearNewMovieList();
+//     for (const movie of form) {  
+//       // Create a new HTML element for each movie
+//       const movieNewElement = document.createElement('div');
+//   movieNewElement.innerHTML = 
+//   `
+//     <h2>${newTitle}</h2>
+//     <p><strong>Year:</strong> ${newYear}</p>
+//     <p><strong>Plot:</strong> ${newPlot}</p>
+//     // <p><strong>Cast:</strong> ${movie.cast.join(', ')}</p>
+//     <p><strong>Runtime:</strong> ${newRuntime} minutes</p>
+//     <p><strong>Rating:</strong> ${newRating}</p>
+//   `;
+
+//   moviesContainer.appendChild(movieNewElement);
+//     }
+//   }
+//   drawNewMovieList();
+  
+//   titleInput.value = "";
+//   plotInput.value = "";
+//   runtimeInput.value = "";
+//   ratingInput.value = "";
+//   yearInput.value = "";
+
+//   movieData.push(movieNewElement);
+// }
   
 
-  // handle submit
-});
+//   // handle submit
+// });
 
 
 // scope movienewElement was within a function so couldnt find it
