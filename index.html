@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-GB">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Celia Alonso" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
     <title>A Movie Data Project</title>
-   
-  
 
-      <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <body>
+  <body>
+    <header>
+      <h1>GREAT FILMS OF WES ANDERSON</h1>
+    </header>
 
-      <header>
-        <h1>GREAT FILMS</h1>
-      </header>
-      <label for="sort-by-asc">Sort by ascending </label>|
-      <input id="sort-by-asc" type="checkbox" > 
-      
-
-      <button id="sort-by-year"> Sort by Year </button>
+    <div class="buttons">
+      <div class="input">
+        <label for="sort-by-asc">Sort by ascending </label>
+        <input id="sort-by-asc" type="checkbox" />
+      </div>
+      <button id="sort-by-year">Sort by Year</button>
       <button id="sort-by-rating">Sorty By Rating</button>
       <button id="sort-by-runtime">Sort by Runtime</button>
-      <button id="delete-first-movie">Delete first movie</button>
+    </div>
 
-     <div id="movies-container"> </div>
-    
+    <div id="movies-container"></div>
 
-     <div class="newmovie"> ADD A MOVIE</div>
-    
-     <form id="entry-form">
+    <h1 class="newmovie">ADD A MOVIE</h1>
+
+    <form id="entry-form">
       <label for="in-title">Title:</label>
-      <input type="text" id="in-title">
+      <input type="text" id="in-title" />
       <label for="in-plot">Plot:</label>
-      <input type="text" id="in-cast">
+      <input type="text" id="in-cast" />
       <label for="in-cast">Cast:</label>
-      <input type="text" id="in-plot">
+      <input type="text" id="in-plot" />
       <label for="in-year">Year:</label>
-      <input type="number" id="in-year">
+      <input type="number" id="in-year" />
       <label for="in-rating">Rating:</label>
-      <input type="number" id="in-rating">
+      <input type="number" id="in-rating" />
       <label for="in-runtime">Runtime:</label>
-      <input type="number" id="in-runtime">
-      
+      <input type="number" id="in-runtime" />
+
       <!-- adding type="button" makes it not necessary to add event.preventDefault() as it won't submit unless we click-->
-      <button id="submit"> Submit </button> 
-     </form>
-    
-     
-        <script src="script.js"> </script>
-   
-    </body>
-  </html>
+      <button id="submit">Submit</button>
+    </form>
 
-   
-
+    <script src="script.js"></script>
+  </body>
+</html>
