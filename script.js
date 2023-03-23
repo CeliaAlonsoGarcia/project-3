@@ -133,45 +133,68 @@ function addMovieArray(obj) {
   movieData.push(obj);
   return movieData;
 }
+// select the data we get in the form
+let titleInput = document.getElementById("in-title");
+let yearInput = document.getElementById("in-year");
+let plotInput = document.getElementById("in-plot");
+let ratingInput = document.getElementById("in-rating");
+let castInput = document.getElementById("in-cast");
+let runtimeInput = document.getElementById("in-runtime");
 
+// extract the values of new data
+const newTitle = titleInput.value;
+const newPlot = plotInput.value;
+const newYear = yearInput.value;
+const newRating = ratingInput.value;
+const newRuntime = runtimeInput.value;
+const newCast = castInput.value.split(",");
+
+console.log(titleInput);
 // connecting submit button with the information we are submitting
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // select the data we get in the form
+  // Check if any of the input fields are empty
+  if (
+    titleInput.value == "" ||
+    yearInput.value == "" ||
+    plotInput.value == "" ||
+    ratingInput.value == "" ||
+    runtimeInput.value == ""
+  ) {
+    alert("Please fill in all fields");
+  } else {
+    // select the data we get in the form
+    let titleInput = document.getElementById("in-title");
+    let yearInput = document.getElementById("in-year");
+    let plotInput = document.getElementById("in-plot");
+    let ratingInput = document.getElementById("in-rating");
+    let castInput = document.getElementById("in-cast");
+    let runtimeInput = document.getElementById("in-runtime");
 
-  console.log("hi");
-  let titleInput = document.getElementById("in-title");
-  let yearInput = document.getElementById("in-year");
-  let plotInput = document.getElementById("in-plot");
-  let ratingInput = document.getElementById("in-rating");
-  let castInput = document.getElementById("in-cast");
-  let runtimeInput = document.getElementById("in-runtime");
+    // extract the values of new data
+    const newTitle = titleInput.value;
+    const newPlot = plotInput.value;
+    const newYear = yearInput.value;
+    const newRating = ratingInput.value;
+    const newRuntime = runtimeInput.value;
+    const newCast = castInput.value.split(",");
 
-  // extract the values
-  const newTitle = titleInput.value;
-  const newPlot = plotInput.value;
-  const newYear = yearInput.value;
-  const newRating = ratingInput.value;
-  const newRuntime = runtimeInput.value;
-  const newCast = castInput.value.split(",");
+    // create new object with new input
+    const newMovieData = {
+      title: newTitle,
+      plot: newPlot,
+      year: newYear,
+      rating: newRating,
+      runtime: newRuntime,
+      cast: newCast,
+    };
 
-  console.log(titleInput);
-
-  // create new object with new input
-  const newMovieData = {
-    title: newTitle,
-    plot: newPlot,
-    year: newYear,
-    rating: newRating,
-    runtime: newRuntime,
-    cast: newCast,
-  };
-
-  // new object being added to movieData
-  addMovieArray(newMovieData);
-  drawMovieList();
-  form.reset();
+    // new object being added to movieData
+    addMovieArray(newMovieData);
+    drawMovieList();
+    form.reset();
+  }
 });
 
 console.log(movieData);
