@@ -1,40 +1,23 @@
-# project-3
+#Planning
 
-Planning
-When I was plan
+When I was planning the project, I first thought about the purpose of the page and the ways in which I wanted the user to interact with the page. I then wrote pseudo code for the next steps to get those functions to work.
 
-purpose of the website
+#Building
 
-thought of the ways i wanted the user to be able to interact with the page
+I started by creating the HTML skeleton with a bit of CSS, as that was the part I was most comfortable with. Then, I moved on to the JavaScript side. At first, I didn't know where to start and began reading about simple JavaScript and doing bits of courses like [FreeCodeCamp](https://www.freecodecamp.org) or [Code with Mosh](https://codewithmosh.com).
 
-and wrote the pseudo code for what I thought would be the next steps to get those functions to work.
+When I started planning the project, I thought I would write the data on the HTML, but then realised that it had to be stored in JavaScript for everything to work. I started by learning how to add a `string` stored in JavaScript to the HTML. Then, I added the data object provided and managed to `render` it on the page with a `loop`.
 
+I started trying to sort the object by title and managed to do it in `console.log`, but didn't know how add the information to the page itself so that the user could see it. Before I figured out how to render the information on the page, I learnt about how to change an `object` into an `array` so that I could sort the `object` better.
 
-Building 
+Then, I created a `reusable function` that would draw the `movieDataObject` and used `innerHTML` and `createElement` within it. I reused that function when making the buttons sort the `movieDataObject` by year, runtime, title, and rating.
 
-I started by creating the html skeleton with a tiny bit of css - that's the part the I was most confortable with.
+#Debugging
 
-then I jumped into trying to do the JS side. At first, I didnt know where to start and I begun reading about simple java script and doing bits of courses like freecodecamp or code with mosh. 
+-I had problems trying to sort the movies by year, rating, etc. when the `movieData` was an `object`, so I learned how to convert the `object` into an `array`.
 
-At first, I thought I would write the data on the html and then realised that had to be stored in js for everything to work. I started by learing how to add a piece of string stored in JS to the html. Then I wrote the dataObject and managed to render it on the page with a loop.
+-I also struggled when the title of the movie was the name of the `object`, so I created a new `key` in the `object` for title.
 
-I started trying to sort the object by title and managed to do it in console.log but didn't now how to make the page itself change.
+-I tried to call a `variable` that was inside a `function` from outside the `function`. I then learned about `scope` and how that was not possible.
 
-Before I figured out how to make the page load realised that I coudn't sort by numerical values if the data was sotored in an object so I learnt to store it into an array.
-
-Then I created a reusable function that would draw the movieDataObject and used innerHTML and createElement within it. I reused that funciton when making the buttons sort the movieDataObject by year, runtime, title and rating.
-
-
-
-
-Debugging
-
-I had problems trying sort the movies by year, rating, etc. when the movieData was an object so learnt how to convert the object into and array.
-
-I also struggled when the title of the movie was the name of the object so I created a new key in the object for title.
-
-I tried to call a constant that was inside a function from outside the fuction and learnt about scope.
-
-I wanted to have an if statement to that if all the boxes of the form were not filled when submitting a new film it would ask the user to fill them all. But I wrote this if statement on its own without any function and it meant  it was running as soon as the page loaded. I then included it in a fuction.
-
-
+-I wanted to have an `if statement` that would check if all the boxes of the `form` were not filled when submitting a new film, and if so, ask the user to fill them all. But I wrote this if statement on its own without any `function`, and it meant that it was running as soon as the page loaded. I then included it in a function.
